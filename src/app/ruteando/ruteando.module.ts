@@ -20,7 +20,9 @@ import { CabeceraComponent } from '../componentes/cabecera/cabecera.component';
 import { QuienSoyComponent } from '../componentes/quien-soy/quien-soy.component'
 import { ListadoDePaisesComponent } from '../componentes/listado-de-paises/listado-de-paises.component'
 import { MapaDeGoogleComponent } from '../componentes/mapa-de-google/mapa-de-google.component'
-import { JugadoresListadoComponent } from '../componentes/jugadores-listado/jugadores-listado.component';
+import { JugadoresListadoComponent } from '../componentes/jugadores-listado/jugadores-listado.component'
+import { PptComponent } from '../componentes/ppt/ppt.component';
+
 
 
 // declaro donde quiero que se dirija
@@ -40,6 +42,7 @@ component: JuegosComponent ,
 children:
      [{path: '' , component: MenuCardComponent},
      {path: 'Adivina' , component: AdivinaElNumeroComponent},
+      {path: 'ppt' , component: PptComponent},
       {path: 'AdivinaMasListado' , component: AdivinaMasListadoComponent},
       {path: 'AgilidadaMasListado' , component: AgilidadMasListadoComponent},
       {path: 'Agilidad' , component: AgilidadAritmeticaComponent}]

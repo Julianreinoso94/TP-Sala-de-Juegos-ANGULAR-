@@ -1,1 +1,8 @@
 /* You can add global styles to this file, and also import other style files */
+body {
+	background: #0d1424 url(/assets/imagenes/juegos.jpg)    no-repeat fixed  top  !important;
+	background-position: center !important;
+	background-size:cover!important;
+	font: .81em/150% Arial, Helvetica, sans-serif;
+	color: #666;
+}

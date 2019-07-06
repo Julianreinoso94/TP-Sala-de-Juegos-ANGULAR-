@@ -11,3 +11,7 @@ height: 70px;
     transform: translate(-50%, -50%);
     color: #100000;
     }
+
+    .jumbotron{
+    background-color:red;
+    }

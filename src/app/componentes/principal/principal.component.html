@@ -1,78 +1,63 @@
-<app-cabecera>  </app-cabecera>
-
-
-
- 
-<div class="container" >
-   
-    <ul class="list-group">
-        <li class="list-group-item list-group-item-danger">
-           
-                <div class="media-body">
-                    <div class="hero-text">
-                        <h4 >Menú Principal</h4>
-                    </div>
-                 </div>
-               
-             
-          </li>
-        <li class="list-group-item list-group-item-success">
+<nav class="navbar navbar-expand-lg navbar-light bg-primary">
+  <a class="navbar-brand" href="#">Navbar</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav">
+      <li class="nav-item active">
+        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
           <a routerLink="/Juegos">
-            <div class="media">
-              <div class="media-left">
-                    <img src="./assets/imagenes/saladejuegos.png" class="media-object imagenDeMenu" >
-              </div>
-              <div class="media-body">
-                <h4 class="media-heading">Juegos</h4>
-                <p>El método lúdico es un conjunto de estrategias diseñadas para crear un ambiente de armonía en los estudiantes que están inmersos en el proceso de aprendizaje. Este método busca que los alumnos se apropien de los temas impartidos por los docentes utilizando el juego.</p>
-              </div>
-             
-            </div> 
-          </a>
-        </li>
-        <li class="list-group-item list-group-item-info">
-            <a routerLink="/Listado">
-              <div class="media">
-                  <div class="media-left">
-                      <img src="./assets/imagenes/listado.jpg" class="media-object imagenDeMenu" >
-                    </div>
-                <div class="media-body">
-                  <h4 class="media-heading">Listados de resultados</h4>
-                  <p>Los listados de los resultados con ordenamiento y busqueda</p>
-                </div>
-                
-              </div> 
-            </a>
-          </li>
-        <li class="list-group-item list-group-item-warning">
-          <a routerLink="/Juegos">
-            <div class="media">
-                <div class="media-left">
-                    <img src="./assets/imagenes/Configuracion.png" class="media-object imagenDeMenu" >
-                  </div>
-              <div class="media-body">
-                <h4 class="media-heading">Configuraci&oacute;n</h4>
-                <p>Ajustes de la aplicacion y los métodos de autentificación</p>
-              </div>
-             
-            </div> 
-          </a>
-        </li>
-        <li class="list-group-item list-group-item-warning">
-          <a routerLink="/Jugadores">
-            <div class="media">
-                <div class="media-left">
-                    <img src="./assets/imagenes/jugadores.png" class="media-object imagenDeMenu" >
-                  </div>
-              <div class="media-body">
-                <h4 class="media-heading">Jugadores</h4>
-                <p>Listado de jugadores</p>
-              </div>
-             
-            </div> 
-          </a>
-        </li>
-       
-        
-      </ul>
-</div>
+        <a class="nav-link" href="#">Juegos</a>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">About me</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link disabled" href="#">GitHub</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link disabled" href="#">Listado Jugadores</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+<main role="main">
+
+  <!-- Main jumbotron for a primary marketing message or call to action -->
+  <div class="jumbotron">
+    <div class="container">
+      <h1 class="display-3">Bienvenidos!! Preparados para Jugar?</h1>
+      <p>This is a template for a simple marketing or informational website. It includes a large callout called a jumbotron and three supporting pieces of content. Use it as a starting point to create something more unique.</p>
+      <p><a class="btn btn-primary btn-lg" routerLink="/peliculas" role="button">Ir a Listado &raquo;</a></p>
+    </div>
+  </div>
+
+  <div class="container">
+    <!-- Example row of columns -->
+    <div class="row">
+      <div class="col-md-4">
+        <h2>Heading</h2>
+        <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+        <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
+      </div>
+      <div class="col-md-4">
+        <h2>Heading</h2>
+        <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+        <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
+      </div>
+      <div class="col-md-4">
+        <h2>PIEDRA, PAPEL O TIJERA</h2>
+        <p>Piedra, papel o tijera, conocido también como cachipún, jankenpón, yan ken po, pin pon papas, hakembó o how-are-you-speak, es un juego infantil, un juego de manos en el que existen tres elementos: la piedra que vence a la tijera rompiéndola, la tijera que vence al papel cortándolo y el papel que vence a la piedra envolviéndola, dando lugar a un círculo o ciclo cerrado (véase bucle extraño), que caracteriza al juego. Se utiliza con mucha frecuencia para decidir quién de dos personas hará algo, tal y como se hace a veces usando una moneda, o para dirimir algún asunto </p>
+        <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
+      </div>
+    </div>
+
+    <hr>
+
+  </div> <!-- /container -->
+
+</main>

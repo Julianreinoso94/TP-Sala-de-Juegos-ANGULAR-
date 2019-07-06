@@ -1,0 +1,49 @@
+
+<link href="https://fonts.googleapis.com/css?family=Permanent+Marker" rel="stylesheet">
+<div class="container-fluid text-center">
+  <div class="row content">
+    <div class="col-sm-1 sidenav">
+    </div>
+    <div class="col-sm-10 text-left">
+      <button *ngIf="mostrarBoton" type="button" class="btn btn-info" (click)="limpiar()" >Abandonar</button>
+      <div class="content">
+        <div class="well color-fondo">
+          <h1 style="text-align:center">
+          <h3 class="fuente">{{eleccionMaquina}}</h3>
+          <h2>{{resultado}}</h2>
+          <h3>{{estadisticas}}</h3>
+
+          </h1><br />
+
+
+          <div class="row margen-izq">
+            <div class="col-md-4">
+              <img alt='Icono Piedra' src='/TP_LAV4_2017/assets/imagenes/rock-icon.png'><br /><br /><br />
+              <p>
+                <button type="button" mat-raised-button color="primary" (click)="elijePiedra()">Piedra</button>
+              </p>
+            </div>
+
+            <div class="col-md-4">
+              <img alt='Icono Papel' src='/TP_LAV4_2017/assets/imagenes/paper-icon.png'><br /><br /><br />
+              <p>
+                <button type="button" mat-raised-button color="primary" (click)="elijePapel()">Papel</button>
+              </p>
+            </div>
+
+
+            <div class="col-md-4">
+              <img alt='Icono Tijera' src='/TP_LAV4_2017/assets/imagenes/scissor-icon.png'><br /><br /><br />
+              <p>
+                <button type="button" mat-raised-button color="primary" (click)="elijeTijera()">Tijera</button>
+              </p>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+    <div class="col-sm-2 sidenav">
+    </div>
+  </div>
+</div>
