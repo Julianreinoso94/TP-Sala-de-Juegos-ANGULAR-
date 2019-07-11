@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute, ParamMap } from '@angular/router';
+import { AuthService } from "../../servicios/auth.service";
 
 import {Subscription} from "rxjs";
 import {TimerObservable} from "rxjs/observable/TimerObservable";
@@ -18,10 +19,85 @@ export class LoginComponent implements OnInit {
   logeando=true;
   ProgresoDeAncho:string;
 
-  clase="progress-bar progress-bar-info progress-bar-striped ";
+  
+  email: string;
+  password: string;
 
+  onSubmitLogin()
+  {
+    this.authService.login(this.email, this.password).then( res =>{
+      this.router.navigateByUrl('Principal');
+    }).catch(err => alert('los datos son incorrectos o no existe el usuario'))
+  }
+  
+
+  clase="progress-bar progress-bar-info progress-bar-striped ";
+/**implements OnInit {
+
+  constructor( public loadingCtrl: LoadingController,
+    public actionSheetController: ActionSheetController,
+    public alertCtrl: AlertController,
+    private authService: AuthService,
+    private router: Router,
+   //private formBuilder: FormBuilder)
+  )
+    { }
+
+  ngOnInit() {
+  }
+
+  onSubmitLogin()
+  {
+    this.authService.login(this.email, this.password).then( res =>{
+      this.router.navigateByUrl('home');
+    }).catch(err => alert('los datos son incorrectos o no existe el usuario'))
+  }implements OnInit {
+
+  email: string;
+  password: string;
+
+  constructor( public loadingCtrl: LoadingController,
+    public actionSheetController: ActionSheetController,
+    public alertCtrl: AlertController,
+    private authService: AuthService,
+    private router: Router,
+   //private formBuilder: FormBuilder)
+  )
+    { }
+
+  ngOnInit() {
+  }
+
+  onSubmitLogin()
+  {
+    this.authService.login(this.email, this.password).then( res =>{
+      this.router.navigateByUrl('home');
+    }).catch(err => alert('los datos son incorrectos o no existe el usuario'))
+  }implements OnInit {
+
+  email: string;
+  password: string;
+
+  constructor( public loadingCtrl: LoadingController,
+    public actionSheetController: ActionSheetController,
+    public alertCtrl: AlertController,
+    private authService: AuthService,
+    private router: Router,
+   //private formBuilder: FormBuilder)
+  )
+    { }
+
+  ngOnInit() {
+  }
+
+  onSubmitLogin()
+  {
+    this.authService.login(this.email, this.password).then( res =>{
+      this.router.navigateByUrl('home');
+    }).catch(err => alert('los datos son incorrectos o no existe el usuario'))
+  } */
   constructor(
-    private route: ActivatedRoute,
+    private route: ActivatedRoute,private authService: AuthService,
     private router: Router) {
       this.progreso=0;
       this.ProgresoDeAncho="0%";
@@ -31,8 +107,23 @@ export class LoginComponent implements OnInit {
   ngOnInit() {
   }
 
+  admin(){
+    this.email="admin";
+    this.password="admin";
+
+  }
+
+  usuarios(){
+    this.email="usuario";
+    this.password="usuario";
+
+  }
+
+
+  
+
   Entrar() {
-    if (this.usuario === 'admin' && this.clave === 'admin') {
+    if (this.email === 'admin' && this.password === 'admin' || this.email === 'usuario' && this.password === 'usuario' ) {
       this.router.navigate(['/Principal']);
     }
   }

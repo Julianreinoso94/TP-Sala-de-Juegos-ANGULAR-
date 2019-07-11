@@ -13,9 +13,12 @@ import { HttpModule } from '@angular/http';
 import { RouterModule, Routes } from '@angular/router';
 
 import { MiHttpService } from './servicios/mi-http/mi-http.service'; 
+
 import { PaisesService } from './servicios/paises.service'; 
 
 import { JugadoresService } from './servicios/jugadores.service'; 
+import { ChatsService } from './servicios/chats.service'; 
+
 import{ ArchivosJugadoresService} from './servicios/archivos-jugadores.service'; 
 import { ErrorComponent } from './componentes/error/error.component';
 import { PrincipalComponent } from './componentes/principal/principal.component';
@@ -54,9 +57,21 @@ import { AgmCoreModule } from '@agm/core';
 import { InputJugadoresComponent } from './componentes/input-jugadores/input-jugadores.component';
 import { SexoPipe } from './pipes/sexo.pipe';
 import { PptComponent } from './componentes/ppt/ppt.component';
+import { AuthService } from './servicios/auth.service';
+
+import { firebaseConfig } from "../environments/environment";
+import { AngularFireModule } from "@angular/fire";
+import { AngularFireAuthModule } from "@angular/fire/auth";
+import { AngularFirestoreModule, FirestoreSettingsToken } from "@angular/fire/firestore";
+import { TatetiComponent } from './componentes/tateti/tateti.component';
+import { TatetilistadoComponent } from './componentes/tatetilistado/tatetilistado.component';
+import { AjuegosimonComponent } from './componentes/ajuegosimon/ajuegosimon.component';
+import { MyserviceService } from './servicios/myservice.service';
+
 
 @NgModule({
   declarations: [
+    TatetiComponent,
     AppComponent,
     AdivinaElNumeroComponent,
     ListadoDeResultadosComponent,
@@ -80,12 +95,16 @@ import { PptComponent } from './componentes/ppt/ppt.component';
     JugadoresListadoComponent,
     InputJugadoresComponent,
     SexoPipe,
-    PptComponent
+    PptComponent,
+    TatetiComponent,
+    TatetilistadoComponent,
+    AjuegosimonComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    RuteandoModule,
+    RuteandoModule,  AngularFireModule.initializeApp(firebaseConfig),
+    AngularFireAuthModule, AngularFirestoreModule,
     HttpModule,
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyB6f8x4IjRlesQ3oETc6BXYQHVRTOlY3Ys'
@@ -94,7 +113,7 @@ import { PptComponent } from './componentes/ppt/ppt.component';
     // importo el ruteo
     // RouterModule.forRoot(MiRuteo)
   ],
-  providers: [ JuegoServiceService, MiHttpService,PaisesService,ArchivosJugadoresService,JugadoresService],
+  providers: [ JuegoServiceService,MyserviceService, MiHttpService,ChatsService,AuthService, PaisesService,ArchivosJugadoresService,JugadoresService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

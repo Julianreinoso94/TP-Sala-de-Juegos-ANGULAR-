@@ -30,12 +30,12 @@
 
       <div class="container">
         <label><b>Usuario</b></label>
-        <input type="text" placeholder="Usuario"  [(ngModel)]="usuario"  name="uname" required>
+        <input type="text" placeholder="email"  [(ngModel)]="email"  name="uname" required>
 
         <label><b>Clave</b></label>
-        <input type="password" placeholder="Clave"  [(ngModel)]="clave" name="psw" required>
+        <input type="password" placeholder="Clave" [(ngModel)]="password" name="psw" required>
             
-        <button *ngIf="logeando"  (click)="MoverBarraDeProgreso()" >Ingresar</button>
+        <button *ngIf="logeando"   (click)="Entrar()" >Ingresar</button>
        
         <div *ngIf="!logeando" class="progress">
             <div class="progress-bar progress-bar-info progress-bar-striped active" [class]="clase" role="progressbar" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100" [style.width]="ProgresoDeAncho" >
@@ -50,6 +50,12 @@
         <button type="button" class="cancelbtn">Cancelar</button>
         <button type="button" class="aceptbtn" routerLink="/Registro" >Registrarse</button>
         <span class="psw">Te olvidaste <a href="#">la clave?</a></span>
+      </div>
+
+      <div class="container" style="background-color:#d41313">
+        <button type="button"   (click)="usuarios() "class="cancelbtn">USUARIO</button>
+        <button type="button"  (click)="admin()" class="aceptbtn"  >ADMIN</button>
+
       </div>
      
     </form>
